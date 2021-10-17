@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "153143693532",
+    "firebase_url": "https://dar-sllah-default-rtdb.firebaseio.com",
+    "project_id": "dar-sllah",
+    "storage_bucket": "dar-sllah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153143693532:android:cf0277fc5cdbf8517c6419",
+        "android_client_info": {
+          "package_name": "com.darSllah.dar_sllah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153143693532-81flt8gb2nrvoga3anbnaocqs4g03pdq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darSllah.dar_sllah",
+            "certificate_hash": "325486b18b12da83883f9250c284650b58456d3c"
+          }
+        },
+        {
+          "client_id": "153143693532-8f2bf3ka2jp70dgjr7sdh6d2iauiav8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darSllah.dar_sllah",
+            "certificate_hash": "ffd81063d4458346b37109032020034dd61bbe06"
+          }
+        },
+        {
+          "client_id": "153143693532-mv3vddl38jb9v3gtfam82bjgfoe40gte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuFB4HE7RTKXpo8ePo7pxvnV3f0WTHC1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153143693532-mv3vddl38jb9v3gtfam82bjgfoe40gte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "153143693532-5egpgh267ml5q5riks017258kcilnc1c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.darSllah.darSllah"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
