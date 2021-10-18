@@ -45,15 +45,17 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 130,
+              height: MediaQuery.of(context).size.width / 3.2,
             ),
             Padding(
               padding: EdgeInsets.only(left: 50, right: 50),
-              child: Image.asset("assets/images/dar_sllah_logo.png"),
+              child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset("assets/images/dar_sllah_logo.png")),
             ),
             SizedBox(
               width: double.infinity,
-              height: 110,
+              height: MediaQuery.of(context).size.width / 3.7,
             ),
             Container(
               alignment: Alignment.topLeft,
@@ -62,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Votre cuisine \nfamiliale',
                 style: TextStyle(
                   fontFamily: 'Raleway',
-                  fontSize: 36,
+                  fontSize: MediaQuery.of(context).size.width / 11.5,
                   color: const Color(0xffffffff),
                   fontWeight: FontWeight.w700,
                   height: 1.6388888888888888,
@@ -76,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Discover Tunisian culture through other perspective\nby exploring the known ',
                 style: TextStyle(
                   fontFamily: 'Raleway',
-                  fontSize: 16,
+                  fontSize: MediaQuery.of(context).size.width / 26,
                   color: const Color(0xffffffff),
                   height: 1.875,
                 ),
@@ -87,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                 width: double.infinity,
-                height: 55,
+                height: MediaQuery.of(context).size.width / 7,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/login_facebook_btn.png'),
@@ -102,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                 width: double.infinity,
-                height: 55,
+                height: MediaQuery.of(context).size.width / 7,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/login_google_btn.png'),
