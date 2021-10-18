@@ -54,7 +54,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         body: Column(
       children: [
         Expanded(
-          flex: 10,
+          flex: MediaQuery.of(context).size.height > 1000 ? 10 : 17,
           child: PageView.builder(
               controller: _controller,
               itemCount: onBoardingContents.length,
@@ -72,8 +72,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               }),
         ),
         Container(
-          width: 200,
-          height: 50,
+          width: MediaQuery.of(context).size.width / 2,
+          height: MediaQuery.of(context).size.width / 8.5,
           child: RaisedButton(
             onPressed: () {
               if (_currentIndex == onBoardingContents.length - 1) {
@@ -89,7 +89,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             child: Text(
               _currentIndex == onBoardingContents.length - 1 ? 'Start' : 'Next',
               style: TextStyle(
-                fontSize: 19,
+                fontSize: MediaQuery.of(context).size.width / 21.5,
               ),
             ),
             textColor: Theme.of(context).backgroundColor,
@@ -110,7 +110,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     },
                     child: Text(
                       'Skip',
-                      style: TextStyle(color: Theme.of(context).primaryColor),
+                      style: TextStyle(fontSize: MediaQuery.of(context).size.width / 30,color: Theme.of(context).primaryColor),
                     ),
                   )
                 : SizedBox(),

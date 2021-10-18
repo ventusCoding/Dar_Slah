@@ -10,15 +10,15 @@ class Dot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: MediaQuery.of(context).size.width / 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
           _onBoardingContentLength,
           (index) => Container(
             margin: EdgeInsets.only(left: 5),
-            height: 10,
-            width:  10,
+            height: MediaQuery.of(context).size.width / 40,
+            width:  MediaQuery.of(context).size.width / 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: _currentIndex == index

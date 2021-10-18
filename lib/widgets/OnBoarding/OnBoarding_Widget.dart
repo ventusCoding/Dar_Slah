@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class OnBoardingWidget extends StatelessWidget {
   final String title;
   final String description;
@@ -14,27 +13,27 @@ class OnBoardingWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           SizedBox(
-            height: 60,
+            height: MediaQuery.of(context).size.width / 7,
             width: double.infinity,
           ),
           Container(
             width: double.infinity,
             child: Image.asset(
               images,
-              width: 350,
-              height: 350,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 2.5,
               alignment: Alignment.center,
             ),
           ),
           SizedBox(
             width: double.infinity,
-            height: 20,
+            height: MediaQuery.of(context).size.width / 20,
           ),
           Text(
             title,
             style: TextStyle(
               fontFamily: 'Raleway',
-              fontSize: 30,
+              fontSize: MediaQuery.of(context).size.width / 13.5,
               color: const Color(0xff000000),
               fontWeight: FontWeight.w700,
               height: 1.6388888888888888,
@@ -49,7 +48,7 @@ class OnBoardingWidget extends StatelessWidget {
               description,
               style: TextStyle(
                 fontFamily: 'Raleway',
-                fontSize: 16,
+                fontSize: MediaQuery.of(context).size.width / 26.5,
                 color: const Color(0xff949494),
                 height: 1.875,
               ),
