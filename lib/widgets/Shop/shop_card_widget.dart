@@ -65,12 +65,12 @@ class ShopCard extends StatelessWidget {
                           children: [
                             Text(
                               '$name',
-                              style: TextStyle(fontSize: 17),
+                              style: TextStyle(fontSize: MediaQuery.of(context).size.width / 24),
                             ),
                             Text(
                               '$price DT',
                               style:
-                                  TextStyle(color: Colors.green, fontSize: 17),
+                                  TextStyle(color: Colors.green, fontSize: MediaQuery.of(context).size.width / 24),
                             )
                           ],
                         ),
@@ -90,6 +90,7 @@ class ShopCard extends StatelessWidget {
                                 child: Text(
                                   'Learn more',
                                   style: TextStyle(
+                                    fontSize: MediaQuery.of(context).size.width / 29,
                                     color: Theme.of(context).primaryColor,
                                   ),
                                 ),

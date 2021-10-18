@@ -38,7 +38,7 @@ class LearnMoreAndSacBtnWidget extends StatelessWidget {
                 'Learn More',
                 style: TextStyle(
                   fontFamily: 'Open Sans',
-                  fontSize: 13,
+                  fontSize: MediaQuery.of(context).size.width / 32,
                   color: const Color(0xfffbce01),
                   fontWeight: FontWeight.w600,
                   height: 2.6923076923076925,
@@ -52,7 +52,7 @@ class LearnMoreAndSacBtnWidget extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             alignment: Alignment.bottomRight,
-            width: 40,
+            width: MediaQuery.of(context).size.width / 5,
             height: double.infinity,
             child: GestureDetector(
               onTap: () {

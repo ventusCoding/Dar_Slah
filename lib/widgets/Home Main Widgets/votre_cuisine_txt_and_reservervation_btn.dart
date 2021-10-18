@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 class VotreCuisineTxtAndReservationBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //var authBloc = Provider.of<AuthBloc>(context, listen: false);
+    var authBloc = Provider.of<AuthBloc>(context, listen: false);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -19,7 +19,7 @@ class VotreCuisineTxtAndReservationBtn extends StatelessWidget {
             TextSpan(
               style: TextStyle(
                 fontFamily: 'Open Sans',
-                fontSize: 28,
+                fontSize: MediaQuery.of(context).size.width / 14.5,
                 color: const Color(0xff468257),
                 height: 1.8214285714285714,
               ),
@@ -49,11 +49,11 @@ class VotreCuisineTxtAndReservationBtn extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            //authBloc.logout();
+            authBloc.logout();
           },
           child: Container(
             margin: EdgeInsets.only(right: 20, top: 20),
-            width: 150,
+            width: MediaQuery.of(context).size.width / 2.7,
             height: 50,
             decoration: BoxDecoration(
               boxShadow: [

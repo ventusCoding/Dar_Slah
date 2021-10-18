@@ -22,7 +22,6 @@ environment:
 
 dependencies:
   flutter_rating_bar: ^4.0.0
-  adobe_xd:
   flutter:
     sdk: flutter
 
@@ -39,6 +38,7 @@ dependencies:
   provider: ^6.0.1
   rating_bar: ^0.2.0
   url_launcher: ^6.0.12
+  flutter_svg: ^0.23.0+1
 
 dev_dependencies:
   flutter_test:

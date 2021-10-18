@@ -1,4 +1,5 @@
 import 'package:dar_sllah/blocs/auth_bloc.dart';
+import 'package:dar_sllah/main.dart';
 import 'package:dar_sllah/screens/Home%20Main/home_main_screen.dart';
 import 'package:dar_sllah/screens/Login.dart';
 import 'package:dar_sllah/screens/Shop/shop_screen.dart';
@@ -8,6 +9,7 @@ import 'package:dar_sllah/widgets/dialogs/rate_us_dialog_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Bag/tab_screen_bag.dart';
 
@@ -88,26 +90,36 @@ class _BottomTabScreenState extends State<BottomTabScreen> {
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
         backgroundColor: Colors.white,
-        fixedColor: Colors.yellow,
+        fixedColor: HexColor("#FBCE01"),
         items: [
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/home_icon.png"),
+              icon: SvgPicture.asset(
+                "assets/images/home_icn.svg",
+              ),
               label: "Home",
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/take_away_icon.png"),
+              icon: SvgPicture.asset(
+                "assets/images/box_icn.svg",
+              ),
               label: "Take away",
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/shopping_icon.png"),
+              icon: SvgPicture.asset(
+                "assets/images/bag_icn.svg",
+              ),
               label: "Shopping",
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/restaurant_icon.png"),
+              icon: SvgPicture.asset(
+                "assets/images/shop_icn.svg",
+              ),
               label: "Restaurant",
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Image.asset("assets/images/about_icon.png"),
+              icon: SvgPicture.asset(
+                "assets/images/about_icn.svg",
+              ),
               label: "About",
               backgroundColor: Colors.white),
         ],

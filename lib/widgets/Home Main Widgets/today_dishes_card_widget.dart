@@ -1,3 +1,4 @@
+import 'package:dar_sllah/classes/dish.dart';
 import 'package:dar_sllah/classes/includes.dart';
 import 'package:dar_sllah/providers/dish_provider.dart';
 import 'package:dar_sllah/screens/Shop/shop_detail_screen.dart';
@@ -27,6 +28,9 @@ class TodayDishesCardWidget extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final loadedDish =
+        Provider.of<DishProvider>(context, listen: false).findById(id);
+
     return GestureDetector(
       onTap: () {
         Provider.of<DishProvider>(context, listen: false).setIdSelected(id);
@@ -41,11 +45,11 @@ class TodayDishesCardWidget extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             SizedBox(
-              width: 300,
-              height: 390, //change this
+              width: MediaQuery.of(context).size.width / 1.4,
+              height: MediaQuery.of(context).size.height / 2.05, //change this
               child: Padding(
                 padding: EdgeInsets.only(
-                  top: 100,
+                  top: MediaQuery.of(context).size.height / 8,
                 ),
                 child: Card(
                   elevation: 2,
@@ -58,7 +62,8 @@ class TodayDishesCardWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 120, // change this
+                        height: MediaQuery.of(context).size.height /
+                            6.5, // change this
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +74,8 @@ class TodayDishesCardWidget extends StatelessWidget {
                               '$name',
                               style: TextStyle(
                                 fontFamily: 'Open Sans',
-                                fontSize: 15,
+                                fontSize:
+                                    MediaQuery.of(context).size.width / 28,
                                 color: const Color(0xff000000),
                                 fontWeight: FontWeight.w600,
                               ),
@@ -82,7 +88,8 @@ class TodayDishesCardWidget extends StatelessWidget {
                               '$price DT',
                               style: TextStyle(
                                 fontFamily: 'Open Sans',
-                                fontSize: 18,
+                                fontSize:
+                                    MediaQuery.of(context).size.width / 23,
                                 color: const Color(0xff468257),
                                 fontWeight: FontWeight.w700,
                               ),
@@ -100,18 +107,97 @@ class TodayDishesCardWidget extends StatelessWidget {
                               : '${description.substring(0, 50)} ...',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            fontSize: 13,
+                            fontSize: MediaQuery.of(context).size.width / 31.5,
                             color: const Color(0xffa7aba9),
-                            height: 2.6923076923076925,
+                            height: 1.5,
                           ),
                           textHeightBehavior: TextHeightBehavior(
                               applyHeightToFirstAscent: false),
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      LearnMoreAndSacBtnWidget(
-                        id: id,
-                      )
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            TextButton(
+                              child: Container(
+                                margin: EdgeInsets.only(top: MediaQuery.of(context).size.width / 31.5),
+                                child: Text(
+                                  'Learn more',
+                                  style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width / 29,
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                ),
+                              ),
+                              onPressed: () {
+                                Provider.of<DishProvider>(context,
+                                        listen: false)
+                                    .setIdSelected(id);
+
+                                Navigator.of(context).pushNamed(
+                                  DetailedShopScreen.routeName,
+                                  arguments: id,
+                                );
+                              },
+                            ),
+                            MaterialButton(
+                              color: Theme.of(context).primaryColor,
+                              shape: CircleBorder(),
+                              elevation: 1,
+                              onPressed: () {
+                                Scaffold.of(context).hideCurrentSnackBar();
+                                Scaffold.of(context).showSnackBar(SnackBar(
+                                  content: Text('Added Item to  cart!'),
+                                  duration: Duration(seconds: 2),
+                                  action: SnackBarAction(
+                                    label: 'UNDO',
+                                    onPressed: () {
+                                      // do something
+                                    },
+                                  ),
+                                ));
+
+                                final savedDish = new Dish(
+                                  description: loadedDish.description,
+                                  id: loadedDish.id + DateTime.now().toString(),
+                                  image: loadedDish.image,
+                                  name: loadedDish.name,
+                                  price: loadedDish.price,
+                                  quantity: 1,
+                                  rate: loadedDish.rate,
+                                  total: loadedDish.total,
+                                );
+
+                                savedDish.includes = new List();
+
+                                loadedDish.includes.forEach((element) {
+                                  Includes includes = new Includes(
+                                    id: element.id + DateTime.now().toString(),
+                                    image: element.image,
+                                    name: element.name,
+                                    price: element.price,
+                                    quantity: 0,
+                                  );
+
+                                  savedDish.includes.add(includes);
+                                });
+
+                                Provider.of<DishProvider>(context,
+                                        listen: false)
+                                    .addPackedDishes(savedDish);
+                              },
+                              child: Container(
+                                  child: Icon(
+                                Icons.shopping_bag,
+                                color: Colors.white,
+                              )),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -123,8 +209,8 @@ class TodayDishesCardWidget extends StatelessWidget {
                   Radius.circular(100),
                 ),
               ),
-              width: 200,
-              height: 200,
+              width: MediaQuery.of(context).size.width / 2.1,
+              height: MediaQuery.of(context).size.width / 2.1,
               child: Image.network('$image'),
             ),
           ],

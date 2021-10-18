@@ -77,7 +77,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                       'Today\'s Dishes',
                       style: TextStyle(
                         fontFamily: 'Open Sans',
-                        fontSize: 27,
+                        fontSize: MediaQuery.of(context).size.width / 15,
                         color: const Color(0xff1d2126),
                         fontWeight: FontWeight.w700,
                       ),
@@ -86,7 +86,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                   ),
                   SizedBox(
                     width: deviceSize.width,
-                    height: 390,
+                    height: MediaQuery.of(context).size.width ,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (ctx, i) => TodayDishesCardWidget(
@@ -108,7 +108,7 @@ class _HomeMainScreenState extends State<HomeMainScreen> {
                       'Most Popular',
                       style: TextStyle(
                         fontFamily: 'Open Sans',
-                        fontSize: 25,
+                        fontSize: MediaQuery.of(context).size.width / 16,
                         color: const Color(0xff1d2126),
                         fontWeight: FontWeight.w700,
                       ),
