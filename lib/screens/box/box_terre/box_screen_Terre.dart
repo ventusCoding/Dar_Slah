@@ -108,12 +108,13 @@ class BoxScreenTerre extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 16, top: 16),
+                        margin: EdgeInsets.only(
+                            left: size.width / 26, top: size.height / 50),
                         width: size.width * 0.75,
-                        height: size.height * 0.35,
+                        height: size.height * 0.34,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(25)),
-                          color: Colors.white,  
+                          color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.25),
@@ -139,13 +140,13 @@ class BoxScreenTerre extends StatelessWidget {
                                   Text(
                                     "la Box",
                                     style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: size.width / 27,
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
                                     "${terreDish.price} DT",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: size.width / 22,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
@@ -153,7 +154,7 @@ class BoxScreenTerre extends StatelessWidget {
                               Text(
                                 "${terreDish.name}",
                                 style: TextStyle(
-                                  fontSize: size.width * 0.125,
+                                  fontSize: size.width * 0.12,
                                   color: HexColor('#468257'),
                                 ),
                               ),
@@ -164,7 +165,7 @@ class BoxScreenTerre extends StatelessWidget {
                                       ? '${terreDish.description}'
                                       : '${terreDish.description.substring(0, 50)} ...',
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: size.width / 29,
                                       color: Colors.grey,
                                       height: 2),
                                 ),
@@ -177,7 +178,9 @@ class BoxScreenTerre extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Container(
-                                        margin: EdgeInsets.only(right: 16),
+                                        height: size.width / 11,
+                                        margin: EdgeInsets.only(
+                                            right: 16, top: size.width / 70),
                                         child: OutlineButton(
                                           child: new Text(
                                             "Take a look",
@@ -240,57 +243,61 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      height: 40,
-      minWidth: 40,
-      onPressed: () {
-        Scaffold.of(context).hideCurrentSnackBar();
-        Scaffold.of(context).showSnackBar(SnackBar(
-          content: Text('Added Item to  cart!'),
-          duration: Duration(seconds: 2),
-          action: SnackBarAction(
-            label: 'UNDO',
-            onPressed: () {
-              // do something
-            },
-          ),
-        ));
+    final Size size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width / 11,
+      child: MaterialButton(
+        height: 40,
+        minWidth: 40,
+        onPressed: () {
+          Scaffold.of(context).hideCurrentSnackBar();
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text('Added Item to  cart!'),
+            duration: Duration(seconds: 2),
+            action: SnackBarAction(
+              label: 'UNDO',
+              onPressed: () {
+                // do something
+              },
+            ),
+          ));
 
-        final savedDish = new Dish(
-          description: loadedDish.description,
-          id: loadedDish.id + DateTime.now().toString(),
-          image: loadedDish.image,
-          name: loadedDish.name,
-          price: loadedDish.price,
-          quantity: _quantity,
-          rate: loadedDish.rate,
-          total: loadedDish.total,
-        );
-
-        savedDish.includes = new List();
-
-        loadedDish.includes.forEach((element) {
-          Includes includes = new Includes(
-            id: element.id + DateTime.now().toString(),
-            image: element.image,
-            name: element.name,
-            price: element.price,
-            quantity: element.quantity,
+          final savedDish = new Dish(
+            description: loadedDish.description,
+            id: loadedDish.id + DateTime.now().toString(),
+            image: loadedDish.image,
+            name: loadedDish.name,
+            price: loadedDish.price,
+            quantity: _quantity,
+            rate: loadedDish.rate,
+            total: loadedDish.total,
           );
 
-          savedDish.includes.add(includes);
-        });
+          savedDish.includes = new List();
 
-        Provider.of<DishProvider>(context, listen: false)
-            .addPackedDishes(savedDish);
-      },
-      color: HexColor('#468257'),
-      textColor: Colors.white,
-      child: Icon(
-        Icons.shopping_bag,
+          loadedDish.includes.forEach((element) {
+            Includes includes = new Includes(
+              id: element.id + DateTime.now().toString(),
+              image: element.image,
+              name: element.name,
+              price: element.price,
+              quantity: element.quantity,
+            );
+
+            savedDish.includes.add(includes);
+          });
+
+          Provider.of<DishProvider>(context, listen: false)
+              .addPackedDishes(savedDish);
+        },
+        color: HexColor('#468257'),
+        textColor: Colors.white,
+        child: Icon(
+          Icons.shopping_bag,
+        ),
+        padding: EdgeInsets.all(size.width / 100),
+        shape: CircleBorder(),
       ),
-      padding: EdgeInsets.all(8),
-      shape: CircleBorder(),
     );
   }
 }
