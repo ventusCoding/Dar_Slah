@@ -108,12 +108,13 @@ class BoxScreenTerre extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: size.width / 26, top: size.height / 50),
+                        margin: EdgeInsets.only(
+                            left: size.width / 26, top: size.height / 50),
                         width: size.width * 0.75,
                         height: size.height * 0.34,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(25)),
-                          color: Colors.white,  
+                          color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.25),
@@ -178,7 +179,8 @@ class BoxScreenTerre extends StatelessWidget {
                                     Expanded(
                                       child: Container(
                                         height: size.width / 11,
-                                        margin: EdgeInsets.only(right: 16,top: size.width / 70),
+                                        margin: EdgeInsets.only(
+                                            right: 16, top: size.width / 70),
                                         child: OutlineButton(
                                           child: new Text(
                                             "Take a look",
