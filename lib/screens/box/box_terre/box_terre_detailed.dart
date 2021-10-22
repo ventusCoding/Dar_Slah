@@ -195,6 +195,10 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                             style: TextStyle(fontSize: size.width * 0.125),
                           ),
                           RatingBarIndicator(
+                            itemBuilder: (context, index) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
                             rating: loadedBoxDish.rate,
                             itemCount: 5,
                             itemSize: 12.5,
