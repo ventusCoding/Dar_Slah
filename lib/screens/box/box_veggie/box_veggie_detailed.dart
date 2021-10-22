@@ -198,6 +198,10 @@ class _BoxDetailedVeggie extends State<BoxDetailedVeggie> {
                             style: TextStyle(fontSize: size.width * 0.125),
                           ),
                           RatingBarIndicator(
+                            itemBuilder: (context, index) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
                             rating: loadedBoxDish.rate,
                             itemCount: 5,
                             itemSize: 12.5,
