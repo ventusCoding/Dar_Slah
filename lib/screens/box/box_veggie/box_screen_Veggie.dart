@@ -105,9 +105,10 @@ class BoxScreenVeggie extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 16, top: 16),
+                        margin: EdgeInsets.only(
+                            left: size.width / 26, top: size.height / 50),
                         width: size.width * 0.75,
-                        height: size.height * 0.35,
+                        height: size.height * 0.34,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(25)),
                           color: Colors.white,
@@ -136,13 +137,13 @@ class BoxScreenVeggie extends StatelessWidget {
                                   Text(
                                     "la Box",
                                     style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: size.width / 27,
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
                                     "${veggieDish.price} DT",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: size.width / 22,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
@@ -161,9 +162,9 @@ class BoxScreenVeggie extends StatelessWidget {
                                       ? '${veggieDish.description}'
                                       : '${veggieDish.description.substring(0, 50)} ...',
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: size.width / 29,
                                       color: Colors.grey,
-                                      height: 2),
+                                      height: 1.5),
                                 ),
                               ),
                               Container(
@@ -174,7 +175,9 @@ class BoxScreenVeggie extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Container(
-                                        margin: EdgeInsets.only(right: 16),
+                                        height: size.width / 11,
+                                        margin: EdgeInsets.only(
+                                            right: 16, top: size.width / 70),
                                         child: OutlineButton(
                                           child: new Text(
                                             "Take a look",
