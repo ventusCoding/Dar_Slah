@@ -19,8 +19,8 @@ class OverViewCardWidget extends StatelessWidget {
           width: 10,
         ),
         Container(
-          height: 40,
-          width: 50,
+          height: MediaQuery.of(context).size.width / 10,
+          width: MediaQuery.of(context).size.height / 15,
           color: Colors.transparent,
           child: new Container(
               decoration: new BoxDecoration(
@@ -41,7 +41,7 @@ class OverViewCardWidget extends StatelessWidget {
           '$name',
           style: TextStyle(
             fontFamily: 'Raleway',
-            fontSize: 16,
+            fontSize: MediaQuery.of(context).size.width / 25,
             color: const Color(0xff000000),
           ),
           textHeightBehavior:

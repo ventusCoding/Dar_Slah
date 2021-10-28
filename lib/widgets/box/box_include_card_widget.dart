@@ -35,7 +35,7 @@ class _BoxIncludesCardState extends State<BoxIncludesCard> {
     return Column(
       children: [
         Container(
-            width: 125, height: 125, child: Image.network("${widget.image}")),
+            width: MediaQuery.of(context).size.width / 3.5, height: MediaQuery.of(context).size.height / 5.7, child: Image.network("${widget.image}")),
         Text('${widget.name}'),
         Text(
           '${widget.price}',

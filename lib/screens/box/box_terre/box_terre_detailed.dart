@@ -121,7 +121,8 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                     },
                     label: Text(
                       'BACK',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                          color: Colors.black, fontSize: size.width / 28),
                     ),
                     icon: Icon(
                       Icons.arrow_back,
@@ -188,7 +189,8 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                           Text(
                             "la box",
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
+                                fontSize: size.width / 25,
+                                fontWeight: FontWeight.w400),
                           ),
                           Text(
                             "${loadedBoxDish.name}",
@@ -217,7 +219,8 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                                   Text(
                                     "(1200) reviews",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey,
+                                        fontSize: size.width / 28),
                                   ),
                                   Column(
                                     children: [
@@ -268,7 +271,8 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                                       ),
                                       Text(
                                         'Rate',
-                                        style: TextStyle(fontSize: 10),
+                                        style: TextStyle(
+                                            fontSize: size.width / 37),
                                       )
                                     ],
                                   ),
@@ -281,13 +285,13 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                                   Text(
                                     "${loadedBoxDish.price} DT",
                                     style: TextStyle(
-                                        fontSize: 32,
+                                        fontSize: size.width / 11.8,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "Delivery costs 7 DT",
                                     style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: size.width / 27,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.grey),
                                   ),
@@ -329,7 +333,7 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                                         '$_quantity',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 16,
+                                            fontSize: size.width / 28,
                                             color: Colors.black),
                                       ),
                                       MaterialButton(
@@ -391,7 +395,7 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                         'OverView',
                         style: TextStyle(
                           fontFamily: 'Raleway',
-                          fontSize: 27,
+                          fontSize: size.width /14,
                           color: const Color(0xff000000),
                           fontWeight: FontWeight.w600,
                         ),
