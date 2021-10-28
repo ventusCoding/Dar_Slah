@@ -25,7 +25,7 @@ class CustomerReviewComment extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(100.0),
             child: Image.network("$image",
-                height: 100, width: 100, fit: BoxFit.cover),
+                height: MediaQuery.of(context).size.height / 7.5, width: MediaQuery.of(context).size.height / 7.5, fit: BoxFit.cover),
           ),
         ),
         Expanded(
@@ -36,7 +36,7 @@ class CustomerReviewComment extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text('$name'),
+                Text('$name',style: TextStyle(fontSize: MediaQuery.of(context).size.height / 53),),
                 RatingBarIndicator(
                   itemBuilder: (context, index) => Icon(
                     Icons.star,
@@ -51,7 +51,7 @@ class CustomerReviewComment extends StatelessWidget {
             ),
             Text(
               '$description',
-              style: TextStyle(height: 2, color: Colors.grey),
+              style: TextStyle(fontSize: MediaQuery.of(context).size.height / 53,height: 2, color: Colors.grey),
             )
           ],
         ))

@@ -486,7 +486,7 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 child: SizedBox(
-                  height: 350,
+                  height: MediaQuery.of(context).size.height / 2.1,
                   width: double.infinity,
                   child: ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
