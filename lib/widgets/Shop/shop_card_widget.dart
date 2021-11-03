@@ -63,9 +63,13 @@ class ShopCard extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              '$name',
-                              style: TextStyle(fontSize: MediaQuery.of(context).size.width / 24),
+                            Flexible(
+                              child: Text(
+                                '$name',
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: false,
+                                style: TextStyle(fontSize: MediaQuery.of(context).size.width / 24),
+                              ),
                             ),
                             Text(
                               '$price DT',
