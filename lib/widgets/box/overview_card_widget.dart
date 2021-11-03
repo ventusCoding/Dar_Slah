@@ -41,7 +41,7 @@ class OverViewCardWidget extends StatelessWidget {
           '$name',
           style: TextStyle(
             fontFamily: 'Raleway',
-            fontSize: MediaQuery.of(context).size.width / 25,
+            fontSize: MediaQuery.of(context).size.width / 27,
             color: const Color(0xff000000),
           ),
           textHeightBehavior:

@@ -35,12 +35,12 @@ class _BoxIncludesCardState extends State<BoxIncludesCard> {
     return Column(
       children: [
         Container(
-            width: MediaQuery.of(context).size.width / 3.5, height: MediaQuery.of(context).size.height / 5.7, child: Image.network("${widget.image}")),
+            width: MediaQuery.of(context).size.width / 3.5, height: MediaQuery.of(context).size.height / 6, child: Image.network("${widget.image}")),
         Text('${widget.name}'),
         Text(
           '${widget.price}',
           style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 24, color: Colors.green),
+              fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.width / 14, color: Colors.green),
         ),
         Row(
           mainAxisSize: MainAxisSize.min,
@@ -65,7 +65,7 @@ class _BoxIncludesCardState extends State<BoxIncludesCard> {
               textColor: Colors.black,
               child: Icon(
                 Icons.remove,
-                size: 10,
+                size: MediaQuery.of(context).size.width / 40,
               ),
               padding: EdgeInsets.all(8),
               shape: OutlineInputBorder(
@@ -78,7 +78,7 @@ class _BoxIncludesCardState extends State<BoxIncludesCard> {
               '$_quantity',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: MediaQuery.of(context).size.width / 22 ,
                   color: Colors.black),
             ),
             MaterialButton(
@@ -99,7 +99,7 @@ class _BoxIncludesCardState extends State<BoxIncludesCard> {
               textColor: Colors.black,
               child: Icon(
                 Icons.add,
-                size: 10,
+                size: MediaQuery.of(context).size.width / 40,
               ),
               padding: EdgeInsets.all(8),
               shape: OutlineInputBorder(

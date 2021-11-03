@@ -15,8 +15,8 @@ class AboutCardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: 70,
-            width: 70,
+            height: MediaQuery.of(context).size.width / 5,
+            width: MediaQuery.of(context).size.width / 5,
             child: Image.asset(image),
           ),
           Column(
@@ -26,10 +26,10 @@ class AboutCardWidget extends StatelessWidget {
                 name,
                 style: TextStyle(
                   fontFamily: 'Raleway',
-                  fontSize: 18,
+                  fontSize: MediaQuery.of(context).size.width / 18,
                   color: const Color(0xff000000),
                   fontWeight: FontWeight.w500,
-                  height: 2.1666666666666665,
+                  height: 1.5,
                 ),
                 textHeightBehavior:
                     TextHeightBehavior(applyHeightToFirstAscent: false),
@@ -42,9 +42,9 @@ class AboutCardWidget extends StatelessWidget {
                 description,
                 style: TextStyle(
                   fontFamily: 'Raleway',
-                  fontSize: 12,
+                  fontSize: MediaQuery.of(context).size.width / 25,
                   color: const Color(0xff8d8d8d),
-                  height: 2.4166666666666665,
+                  height: 2,
                 ),
                 textHeightBehavior:
                     TextHeightBehavior(applyHeightToFirstAscent: false),
