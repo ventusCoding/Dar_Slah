@@ -395,7 +395,7 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                         'OverView',
                         style: TextStyle(
                           fontFamily: 'Raleway',
-                          fontSize: size.width /14,
+                          fontSize: size.width / 14,
                           color: const Color(0xff000000),
                           fontWeight: FontWeight.w600,
                         ),
@@ -484,7 +484,8 @@ class _BoxDetailedTerre extends State<BoxDetailedTerre> {
                     style: TextStyle(fontSize: size.width * 0.075),
                   )),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 20),
+                margin: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width / 20),
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height / 2,
                   width: double.infinity,
